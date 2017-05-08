@@ -1,0 +1,17 @@
+
+server:
+  port: 8881
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config

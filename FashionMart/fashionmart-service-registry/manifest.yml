@@ -1,0 +1,5 @@
+---
+applications:
+- name: fashionmart-service-registry
+  memory: 128M
+  path: target/fashionmart-service-registry.jar

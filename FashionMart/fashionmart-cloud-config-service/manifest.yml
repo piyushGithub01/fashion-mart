@@ -1,0 +1,7 @@
+---
+applications:
+- name: fashionmart-cloud-config-service
+  memory: 128M
+  path: target/fashionmart-cloud-config-service.jar
+  services:
+      - fashionmart-service-registry

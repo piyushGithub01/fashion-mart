@@ -1,0 +1,7 @@
+---
+applications:
+- name: fashionmart-pricing-service
+  memory: 256M
+  path: target/fashionmart-pricing-service.jar
+  services:
+      - fashionmart-service-registry

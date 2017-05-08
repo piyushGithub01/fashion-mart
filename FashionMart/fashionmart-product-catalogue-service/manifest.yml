@@ -1,0 +1,7 @@
+---
+applications:
+- name: fashionmart-product-catalogue-service
+  memory: 256M
+  path: target/fashionmart-product-catalogue-service.jar
+  services:
+      - fashionmart-service-registry
