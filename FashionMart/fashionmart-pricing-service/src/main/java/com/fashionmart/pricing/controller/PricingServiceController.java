@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.async.DeferredResult;
 
 import com.fashionmart.common.serviceinteface.PricingServiceApi;
 import com.fashionmart.pricing.service.PriceCalculatorService;
@@ -31,5 +32,11 @@ public class PricingServiceController implements PricingServiceApi{
 		LOGGER.warn("Hystrix circuit breaker ----price not available---");
         return -1;
     }
+
+	@Override
+	public @ResponseBody DeferredResult<Double> getDefPriceByProductId(@PathVariable String id) {
+		LOGGER.info("received request to get def price by product id: {}", id);
+		return priceCalculatorService.getDefPriceByProductId(id);
+	}
 	
 }
